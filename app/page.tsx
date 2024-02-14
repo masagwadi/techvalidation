@@ -210,6 +210,7 @@ const IndexPage: React.FC = () => {
     <div>
       {isLoaded ? (
         <div>
+          <h1>Playing with google maps API</h1>
           <div>
             <select value={selectedProvince} onChange={e => setSelectedProvince(e.target.value)}>
               <option value="">Select Province</option>
