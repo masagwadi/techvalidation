@@ -4,7 +4,7 @@ import { GoogleMap, Marker, useLoadScript, Autocomplete, InfoWindow } from '@rea
 import Image from 'next/image';
 
 const containerStyle: React.CSSProperties = {
-  width: '800px',
+  width: '100%',
   height: '600px'
 };
 
@@ -241,10 +241,11 @@ const IndexPage: React.FC = () => {
           {selectedProvince && selectedCity && (
             <div className="flex">
               <div className="w-1/2 bg-gray-200 p-4">
-            
+            {/* 
               <Autocomplete onLoad={(autocompleteInstance) => { autocomplete.current = autocompleteInstance }} onPlaceChanged={handleAutocompleteSelect}>
                 <input type="text" placeholder="Search for a store" />
               </Autocomplete>
+            */}
               <MyMapComponent stores={stores} center={mapCenter} onStoreClick={handleStoreClick} selectedStoreData={selectedStoreData} />
               </div>
               <div className="w-1/2 bg-gray-300 p-4">
@@ -296,6 +297,7 @@ const IndexPage: React.FC = () => {
                         </li>
                       ))}
                   </ul>
+                  <br/><hr></hr><br/>
                   {selectedProvince && (
                     <p>Number of stores in {selectedProvince}: {stores.filter(store => store.province === selectedProvince).length}</p>
                   )}
